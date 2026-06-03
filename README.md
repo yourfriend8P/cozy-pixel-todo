@@ -113,5 +113,3 @@ Output will be in the `dist/` folder.
 ## License
 
 # MIT — feel free to use and modify for your own projects.
-
-# cozy-pixel-todo
