@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Cozy Pixel Art Todo List
 
 A charming pixel art themed todo list app built with **React + Vite + Tailwind CSS v4**. Manage your daily tasks in a cozy, nostalgic pixel aesthetic with persistent storage so your tasks are never lost.
@@ -113,8 +112,6 @@ Output will be in the `dist/` folder.
 
 ## License
 
-MIT — feel free to use and modify for your own projects.
-=======
+# MIT — feel free to use and modify for your own projects.
+
 # cozy-pixel-todo
-A cozy pixel art themed todo list app built with React + Vite. Features task management with completed/trash filters, persistent localStorage, and a charming pixel aesthetic with custom fonts and animations.
->>>>>>> b1d8c540ef87f58413e2a5c320f9b1fedb671a06
