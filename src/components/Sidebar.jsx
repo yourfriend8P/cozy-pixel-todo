@@ -1,4 +1,4 @@
-import ToDoListBox from "../assets/vector.png";
+import ToDoListBox from "../assets/Vector.png";
 import SideBarButton from "./SideBarButton";
 
 function Sidebar({ filter, setFilter, clearAll, clearCompleted, clearTrash }) {

@@ -1,4 +1,4 @@
-import ToDoListBox from "../assets/vector.png";
+import ToDoListBox from "../assets/Vector.png";
 import "../index.css";
 function InputBox({ input, setInput, addTask }) {
   function handleSubmit(e) {
