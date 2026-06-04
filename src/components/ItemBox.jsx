@@ -6,7 +6,7 @@ function ItemBox({ task, toggleTask }) {
         padding: "16px",
         marginBottom: "16px",
         boxShadow:
-          "0px 8px 6px rgba(0,0,0,0.3), inset 0px -7px 2px rgba(0,0,0,0.25)",
+          "0 -8px 4px 0 rgba(168, 121, 89, 0.60) inset, 37px 36px 14px 0 rgba(0, 0, 0, 0.00), 23px 23px 13px 0 rgba(0, 0, 0, 0.03), 13px 13px 11px 0 rgba(0, 0, 0, 0.10), 6px 6px 8px 0 rgba(0, 0, 0, 0.17), 1px 1px 5px 0 rgba(0, 0, 0, 0.19)",
         backgroundColor: task.completed ? "#C9B492" : "#E8CFA7",
       }}
     >

@@ -1,6 +1,11 @@
 import ToDoListBox from "../assets/vector.png";
 import "../index.css";
 function InputBox({ input, setInput, addTask }) {
+  function handleSubmit(e) {
+    e.preventDefault();
+    addTask();
+  }
+
   return (
     <div
       className="flex justify-center"
@@ -8,7 +13,8 @@ function InputBox({ input, setInput, addTask }) {
         marginBottom: "24px",
       }}
     >
-      <div
+      <form
+        onSubmit={handleSubmit}
         className="bg-[#C3996D] w-180 h-20 flex justify-center items-center"
         style={{
           padding: "10px",
@@ -23,7 +29,7 @@ function InputBox({ input, setInput, addTask }) {
           style={{
             padding: "16px",
             boxShadow:
-              "0px 8px 6px rgba(0,0,0,0.3), inset 0px -7px 2px rgba(0,0,0,0.25)",
+              "0 -8px 4px 0 rgba(168, 121, 89, 0.60) inset, 37px 36px 14px 0 rgba(0, 0, 0, 0.00), 23px 23px 13px 0 rgba(0, 0, 0, 0.03), 13px 13px 11px 0 rgba(0, 0, 0, 0.10), 6px 6px 8px 0 rgba(0, 0, 0, 0.17), 1px 1px 5px 0 rgba(0, 0, 0, 0.19)",
             color: "white",
             textShadow:
               "1px 1px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000",
@@ -39,12 +45,12 @@ function InputBox({ input, setInput, addTask }) {
             height: "60px",
             padding: "16px",
             boxShadow:
-              "0px 8px 6px rgba(0,0,0,0.3), inset 0px -7px 2px rgba(0,0,0,0.25)",
+              "0 -8px 4px 0 rgba(168, 121, 89, 0.60) inset, 37px 36px 14px 0 rgba(0, 0, 0, 0.00), 23px 23px 13px 0 rgba(0, 0, 0, 0.03), 13px 13px 11px 0 rgba(0, 0, 0, 0.10), 6px 6px 8px 0 rgba(0, 0, 0, 0.17), 1px 1px 5px 0 rgba(0, 0, 0, 0.19)",
           }}
         >
           <img src={ToDoListBox} className="w-full select-none" />
         </button>
-      </div>
+      </form>
     </div>
   );
 }
