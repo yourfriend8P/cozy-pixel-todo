@@ -44,6 +44,7 @@ function ItemBox({ task, toggleTask }) {
           letterSpacing: "1.5px",
           textDecoration: task.completed ? "line-through" : "none", // strikethrough when done
           opacity: task.completed ? 0.6 : 1,
+          wordBreak: "break-all",
         }}
       >
         {task.text}
