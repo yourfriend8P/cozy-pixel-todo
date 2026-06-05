@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import lofi from "../assets/lofi.mp3";
+import lofi from "../assets/Lofi.mp3";
 
 export default function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
