@@ -1,14 +1,17 @@
 import { useState } from "react";
+import ButtonPress from "../assets/ButtonPress.mp3";
 
 function SideBarButton({ title, onClick, active }) {
+  const audio = new Audio(ButtonPress);
   const [hovered, setHovered] = useState(false);
+  const [pressed, setPressed] = useState(false);
   return (
     <button
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onMouseDown={() => setPressed(true)}
-      onMouseUp={() => setPressed(false)}
+      // onMouseDown={() => setPressed(true)}
+      // onMouseUp={() => setPressed(false)}
       className="w-full h-15 text-white font-bold flex justify-center items-center border-3  border-[#926454]  font-pixel text-[22px] cursor-pointer"
       style={{
         marginLeft: "8px",

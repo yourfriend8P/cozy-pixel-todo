@@ -1,4 +1,13 @@
+import TaskCompletedSound from "../assets/TaskCompleted.mp3";
+
+const audio = new Audio(TaskCompletedSound);
+audio.preload = "auto";
+
 function ItemBox({ task, toggleTask }) {
+  function playSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
   return (
     <div
       className="task-enter w-full flex flex-row items-center"
@@ -11,7 +20,10 @@ function ItemBox({ task, toggleTask }) {
       }}
     >
       <button
-        onClick={() => toggleTask(task.id)}
+        onClick={() => {
+          playSound();
+          toggleTask(task.id);
+        }}
         className="shrink-0 rounded-full w-10 h-10 hover:bg-[#A27D56] flex items-center justify-center"
         style={{
           marginRight: "8px",

@@ -1,7 +1,17 @@
 import ToDoListBox from "../assets/Vector.png";
 import SideBarButton from "./SideBarButton";
+import ButtonPress from "../assets/ButtonPress.mp3";
+
+// Created once, outside component
+const audio = new Audio(ButtonPress);
+audio.preload = "auto";
 
 function Sidebar({ filter, setFilter, clearAll, clearCompleted, clearTrash }) {
+  function playSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
+
   return (
     <div
       className="flex justify-center items-center"
@@ -21,24 +31,41 @@ function Sidebar({ filter, setFilter, clearAll, clearCompleted, clearTrash }) {
         >
           <SideBarButton
             title="All"
-            onClick={() => setFilter("all")}
+            onClick={() => {
+              playSound();
+              setFilter("all");
+            }}
             active={filter === "all"}
           />
           <SideBarButton
             title="Completed"
-            onClick={() => setFilter("completed")}
+            onClick={() => {
+              playSound();
+              setFilter("completed");
+            }}
             active={filter === "completed"}
           />
           <SideBarButton
             title="Trash"
-            onClick={() => setFilter("trash")}
+            onClick={() => {
+              playSound();
+              setFilter("trash");
+            }}
             active={filter === "trash"}
           />
-
-          <SideBarButton title="Clear Completed" onClick={clearCompleted} />
+          <SideBarButton
+            title="Clear Completed"
+            onClick={() => {
+              playSound();
+              clearCompleted();
+            }}
+          />
           <SideBarButton
             title={filter === "trash" ? "Clear Trash" : "Clear All"}
-            onClick={filter === "trash" ? clearTrash : clearAll}
+            onClick={() => {
+              playSound();
+              filter === "trash" ? clearTrash() : clearAll();
+            }}
           />
         </div>
       </div>

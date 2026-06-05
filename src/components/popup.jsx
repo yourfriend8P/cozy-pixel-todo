@@ -1,6 +1,14 @@
 import PopupButton from "./PopupButton";
+import ButtonPress from "../assets/ButtonPress.mp3";
+
+const audio = new Audio(ButtonPress);
+audio.preload = "auto";
 
 function Popup({ onConfirm, onCancel, message }) {
+  function playSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       {/* Dark overlay */}
@@ -39,8 +47,20 @@ function Popup({ onConfirm, onCancel, message }) {
           <p>Please Confirm</p>
           <p>{message}</p>
           <div className="flex flex-row justify-end">
-            <PopupButton title="Cancel" onClick={onCancel} />
-            <PopupButton title="OK" onClick={onConfirm} />
+            <PopupButton
+              title="Cancel"
+              onClick={() => {
+                playSound();
+                onCancel();
+              }}
+            />
+            <PopupButton
+              title="OK"
+              onClick={() => {
+                playSound();
+                onConfirm();
+              }}
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,15 @@
 import ToDoListBox from "../assets/Vector.png";
 import "../index.css";
+import TaskAddedSound from "../assets/TaskAdded.mp3";
+
+const audio = new Audio(TaskAddedSound);
+audio.preload = "auto";
+
 function InputBox({ input, setInput, addTask }) {
+  function playSound() {
+    audio.currentTime = 0;
+    audio.play();
+  }
   function handleSubmit(e) {
     e.preventDefault();
     addTask();
@@ -37,7 +46,10 @@ function InputBox({ input, setInput, addTask }) {
           }}
         />
         <button
-          onClick={addTask}
+          onClick={() => {
+            if (input.trim() !== "") playSound();
+            addTask();
+          }}
           className="bg-[#E8CFA7] hover:bg-[#D1BA96] text-white font-bold flex justify-cemter items-center"
           style={{
             marginLeft: "8px",

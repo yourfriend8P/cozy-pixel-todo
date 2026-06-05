@@ -4,6 +4,7 @@ import background from "./assets/background.png";
 import title from "./assets/Title.png";
 import { useState, useEffect } from "react";
 import Popup from "./components/popup";
+import MusicPlayer from "./components/MusicPlayer";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -159,6 +160,7 @@ function App() {
           />
         </div>
       </div>
+      <MusicPlayer />
     </div>
   );
 }
